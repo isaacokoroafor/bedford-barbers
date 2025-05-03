@@ -12,7 +12,7 @@ function classNames(...classes: string[]) {
 export default function MenuBar() {
   return (
     <Disclosure as="nav" className="w-full overflow-hidden ">
-      <div className="mx-auto p-10">
+      <div className="mx-auto ">
         <div className="relative flex h-16 items-center justify-between">
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
             {/* Mobile menu button*/}
