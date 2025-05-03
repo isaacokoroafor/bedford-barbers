@@ -15,5 +15,6 @@ export default defineConfig({
     dataset: 'production',
     // Set useCdn to false if you're building statically.
     useCdn: false,
+    studioBasePath: '/studio'
   })],
 });
