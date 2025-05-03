@@ -11,7 +11,7 @@ function classNames(...classes: string[]) {
 
 export default function MenuBar() {
   return (
-    <Disclosure as="nav" className="w-full overflow-hidden ">
+    <Disclosure as="nav" className="w-full overflow-hidden text-gray-100">
       <div className="mx-auto ">
         <div className="relative flex h-16 items-center justify-between">
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -26,7 +26,8 @@ export default function MenuBar() {
           <div className="flex">
             <div className="flex flex-shrink-0 items-center">
               <a href='/' className='w-full flex ml-12 sm:ml-0'>
-              <img className='h-10 mr-3' src="/logo.svg"></img>
+              <ReactSVG loading={() => <span>Loading</span>}
+              className='h-20 w-20 stroke-white' src='logo.svg'></ReactSVG>
               </a>
             </div>
             <div className="hidden sm:ml-6 sm:block">
@@ -48,15 +49,9 @@ export default function MenuBar() {
             </div>
           </div>
           <div className="inline-flex gap-1 md:gap-5">
-            
-          <ReactSVG
-              className={`header-social1 opacity-0 h-8 w-8 translate-x-[800px] `}
-              src={`../icons/linkedin-in.svg`}
-            />
-            <ReactSVG
-                className={`header-social2 opacity-0 h-8 w-8 translate-x-[800px]`}
-                src={`../icons/youtube.svg`}
-              />
+            <a href="#book" className='rounded py-2 px-10 border border-gray-500'>
+                BOOK NOW
+            </a>
           </div>
         </div>
       </div>
