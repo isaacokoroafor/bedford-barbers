@@ -1,0 +1,46 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		
+		<link rel="sitemap" href="/sitemap-index.xml" />
+		<link rel="stylesheet" href="https://use.typekit.net/rbc5sro.css">
+		<link rel="stylesheet" href="/src/styles/global.css">
+		<script type="application/ld+json">
+			{
+			  "@context": "https://schema.org",
+			  "@type": "Organization",
+			  "url": "https://www.dev-operations.info",
+			  "logo": "https://www.dev-operations.info/devops-logo.png",
+			  "name": "Bedford Barber Co",
+			  "description": "Dev Operations is well-known for producing high-quality websites",
+			  "email": "contact@dev-operations.info",
+			  "telephone": "+44 07771 924040",
+			  "address": {
+				"@type": "PostalAddress",
+				"streetAddress": "9 Darwin Rd",
+				"addressLocality": "Bedford",
+				"addressCountry": "UK",
+				"addressRegion": "Bedfordshire",
+				"postalCode": "mk42 9lu"
+			  }
+			}
+			</script>
+	</head>
+    <body class="bg-black">
+
+        <slot />
+    </body>
+</html>
