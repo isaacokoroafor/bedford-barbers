@@ -4,6 +4,7 @@ import tailwindcss from "@tailwindcss/vite";
 import react from "@astrojs/react";
 import icon from "astro-icon";
 import sanity from "@sanity/astro";
+import vercel from "@astrojs/vercel";
 // https://astro.build/config
 export default defineConfig({
   vite: {
@@ -17,4 +18,6 @@ export default defineConfig({
     useCdn: false,
     studioBasePath: '/studio'
   })],
+
+  adapter: vercel(),
 });
