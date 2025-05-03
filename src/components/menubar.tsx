@@ -36,10 +36,11 @@ export default function MenuBar() {
                   <a
                     key={item.name}
                     href={item.href}
+                    data-animate="to:y-0|opacity-1|ease-back"
                     aria-current={item.current ? 'page' : undefined}
                     className={classNames(
                       item.current ? ' text-gray-100' : '',
-                      'rounded-md px-1 md:px-3 py-2 font-medium text-gray-200',
+                      'rounded-md px-1 md:px-3 py-2 font-medium opacity-0 text-gray-200 translate-y-10',
                     )}
                   >
                     {item.name}
@@ -48,7 +49,8 @@ export default function MenuBar() {
               </div>
             </div>
           </div>
-          <div className="inline-flex gap-1 md:gap-5">
+          <div className="inline-flex gap-1 md:gap-5 opacity-0 translate-x-full" 
+                    data-animate="to:x-0|opacity-1|ease-back">
             <a href="#book" className='rounded py-2 px-10 border border-gray-500'>
                 BOOK NOW
             </a>
