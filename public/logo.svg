@@ -1,11 +1,3 @@
----
-import Layout from "@/layouts/Layout.astro";
-
-
----
-
-<Layout title="Bedford Barber Co">
-	
 	<svg id="Layer_1" class="h-96 m-auto mt-40" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 790.2 781.58">
 		<defs>
 		  <style>
@@ -152,4 +144,3 @@ import Layout from "@/layouts/Layout.astro";
 		<path class="cls-1" d="M553.4,254.73c59.13,60.69-117.89,92.46-36.24,144.33"/>
 		<path class="cls-1" d="M326.64,395.66c68.34,114.78,242.67,51.85,190.52,3.4"/>
 	  </svg>
-</Layout>
