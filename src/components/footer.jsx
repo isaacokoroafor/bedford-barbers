@@ -38,7 +38,7 @@ export default function FooterMenu() {
                 <Icon className="h-6 w-6" />
               ) : (
                 <div className="w-6 text-white">
-                  <ReactSVG src={svg} svgClassName=" text-white" />
+                  <ReactSVG src={svg} className=" text-white" />
                 </div>
               )}
             </a>

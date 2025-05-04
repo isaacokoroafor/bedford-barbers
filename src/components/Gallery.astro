@@ -1,0 +1,13 @@
+---
+import { urlForImage } from "@/sanity/lib/url-for-image";
+
+const { section } = Astro.props;
+---
+
+<div class="grid grid-cols-3" id="gallery">
+    {
+        section.images.map((img:any, i:number) => 
+        <img src={img?.asset ? urlForImage(img?.asset)?.url(): ""} class="object-cover w-full">)
+    }
+        </div>
+
