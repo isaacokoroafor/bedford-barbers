@@ -1,13 +1,19 @@
 ---
+import Stars from "./Stars.astro";
+
 const { page } = Astro.props;
 ---
 <div class="flex flex-nowrap">
 
-<div class="swiper w-full h-20 my-10">
+<div class="swiper  my-10">
      <div class="swiper-wrapper">
 {
     page.sections.map((section:any, i:Number) => 
-    section._type == "review" && <div class="swiper-slide">{section.title}</div>)
+    section._type == "review" && <div class="swiper-slide text-center text-white">
+        <Stars stars="3"></Stars>
+        {section.title}
+        <div class="text-l text-gray-400">{section.name} <small>{section.reviewDate}</small></div>
+    </div>)
 }
     </div>
     <div class="swiper-button-next relative"></div>
@@ -28,7 +34,11 @@ var swiper = new Swiper(".swiper", {
   
   modules: [Navigation, Pagination],
       slidesPerView: 2,
-      spaceBetween: 20,
+      spaceBetween: 20,loop: true,
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+  },
       pagination: {
         el: ".swiper-pagination",
       },navigation: {

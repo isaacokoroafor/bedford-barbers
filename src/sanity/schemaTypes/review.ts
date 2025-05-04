@@ -9,6 +9,10 @@ export const reviewType = defineType({
       name: "title",
     }),
     defineField({
+      type: "string",
+      name: "name",
+    }),
+    defineField({
       type: "number",
       name: "stars",
     }),
