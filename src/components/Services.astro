@@ -1,0 +1,35 @@
+---
+import { urlForImage } from "@/sanity/lib/url-for-image";
+import { Icon } from "astro-icon/components";
+
+const { page } = Astro.props;
+
+---
+
+<div class="w-full p-2 sm:p-10  overflow-hidden">
+    
+    <div 
+    data-animate="[&>a]:to:y-0|opacity-1|ease-back|stagger-0.25" class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-10">
+    {
+		page.sections.map((section:any, i:Number) => 
+		section._type == "serviceOffer" && 
+        <a href={section.url} 
+        class="service-offer  hover:shadow-sm opacity-0 text-gray-200 text-center p-5 translate-y-full"
+        itemscope itemtype="https://schema.org/Service"
+        data-listorder={i} id={`service-offer-${i}`} >
+            
+            <meta itemprop="serviceType" content={section.serviceType} />
+            
+            <h2 class="rounded-md whitespace-nowrap flex justify-between text-4xl p-2 ">
+                
+                <span>{section.title}</span>
+                <span class=" flex">£{section.price}</span>
+            </h2>
+            <img src={section.image?.asset ? urlForImage(section.image?.asset)?.url(): ""} class="object-fill text-gray-200 h-20 mx-auto my-5">
+            <h3>BOOK NOW</h3>
+        </a> )
+	}
+
+
+    </div>
+</div>

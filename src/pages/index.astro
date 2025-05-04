@@ -1,8 +1,30 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-
+import { loadQuery } from '../sanity/lib/load-query';
+import type { SanityDocument } from '@sanity/client';
+export const prerender = true
 
 import { Icon } from "astro-icon/components";
+import Services from "@/components/Services.astro";
+
+export async function getStaticPaths() {
+  const { data: pages } = await loadQuery<SanityDocument[]>({
+    query: `*[_type == "page"]`,
+  });
+
+  return pages.map(() => {
+    return {
+      params: {
+        slug: "/",
+      },
+    };
+  });
+}
+const { params } = Astro
+const { data: page } = await loadQuery<{ title: string; sections: any[] }>({
+  query: `*[_type == "page" && slug.current == '/'][0]`,
+  params,
+})
 ---
 
 <Layout title="Bedford Barber Co">
@@ -18,7 +40,8 @@ import { Icon } from "astro-icon/components";
 		<img src="/barber.svg" class="h-32 -mt-10 rotate-90 mx-auto">
 	</div>
 	<Icon class="h-96 w-96 m-auto opacity-0 translate-y-full" 
-	
-                    data-animate="to:y-0|opacity-1|ease-back"
+	data-animate="to:y-0|opacity-1|ease-back"
 	name="logo"></Icon>
+
+	<Services {page}></Services>
 </Layout>

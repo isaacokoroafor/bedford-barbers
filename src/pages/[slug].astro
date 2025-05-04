@@ -1,0 +1,35 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { loadQuery } from '../sanity/lib/load-query';
+import type { SanityDocument } from '@sanity/client';
+
+export const prerender = true
+
+export async function getStaticPaths() {
+  const { data: pages } = await loadQuery<SanityDocument[]>({
+    query: `*[_type == "page" && slug.current != "/"]`,
+  });
+
+  return pages.map(({ slug }) => {
+    return {
+      params: {
+        slug: slug.current,
+      },
+    };
+  });
+}
+const { params } = Astro
+const { data: page } = await loadQuery<{ title: string; sections: any[]; category: any; _id: any}>({
+  query: `*[_type == "page" && slug.current == $slug][0]`,
+  params,
+})
+
+
+---
+
+<Layout title={page.title} >
+	<main>
+	</main>
+</Layout>
+
+

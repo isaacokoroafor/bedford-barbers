@@ -5,5 +5,5 @@ export const Navigation = [
     { name: 'GALLERY', href: '#gallery', current: false },
     { name: 'CONTACT', href: '#contact', current: false },
     { name: 'BLOG', href: '/blog', current: false },
-    { name: 'CAREERS', href: '#careers', current: false },
+    { name: 'CAREERS', href: '/careers', current: false },
   ];
