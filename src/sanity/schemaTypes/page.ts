@@ -41,7 +41,9 @@ export const pageType = defineType({
       of: [
         defineArrayMember({
           type: "serviceOffer",
-        }),
+        }),defineArrayMember({
+            type: "review",
+          }),
       ],
     }),
   ],

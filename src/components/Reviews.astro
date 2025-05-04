@@ -1,0 +1,74 @@
+---
+const { page } = Astro.props;
+---
+<div class="flex flex-nowrap">
+
+<div class="swiper w-full h-20 my-10">
+     <div class="swiper-wrapper">
+{
+    page.sections.map((section:any, i:Number) => 
+    section._type == "review" && <div class="swiper-slide">{section.title}</div>)
+}
+    </div>
+    <div class="swiper-button-next relative"></div>
+    <div class="swiper-button-prev relative"></div>
+    <div class="swiper-pagination"></div>
+</div>
+</div>
+<script>
+// import Swiper JS
+import Swiper from 'swiper';
+import { Navigation, Pagination } from 'swiper/modules';
+// import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
+var swiper = new Swiper(".swiper", {
+  
+  modules: [Navigation, Pagination],
+      slidesPerView: 2,
+      spaceBetween: 20,
+      pagination: {
+        el: ".swiper-pagination",
+      },navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      breakpoints: {
+        // when window width is >= 320px
+        320: {
+          slidesPerView: 1,
+          spaceBetween: 20
+        },
+        // when window width is >= 640px
+        640: {
+          slidesPerView: 2,
+          spaceBetween: 40
+        },
+        1200: {
+          slidesPerView: 3,
+          spaceBetween: 60
+        }
+      }
+    });
+</script>
+
+
+<style>
+.swiper-wrapper {
+  width: calc(100% - 60px);
+  margin: 0 30px;
+}
+.swiper-button-next,.swiper-button-prev {
+  color: #000;
+  font-weight:bold;
+}
+.swiper-pagination-bullet-active {
+  background-color: #000 !important;
+}
+.swiper-pagination-bullets.swiper-pagination-horizontal{
+  bottom: -30px;
+  height: fit-content;
+}
+</style>

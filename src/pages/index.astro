@@ -6,6 +6,7 @@ export const prerender = true
 
 import { Icon } from "astro-icon/components";
 import Services from "@/components/Services.astro";
+import Reviews from "@/components/Reviews.astro";
 
 export async function getStaticPaths() {
   const { data: pages } = await loadQuery<SanityDocument[]>({
@@ -44,4 +45,5 @@ const { data: page } = await loadQuery<{ title: string; sections: any[] }>({
 	name="logo"></Icon>
 
 	<Services {page}></Services>
+	<Reviews {page}></Reviews>
 </Layout>
