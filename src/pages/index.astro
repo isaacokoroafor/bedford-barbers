@@ -2,11 +2,11 @@
 import Layout from "@/layouts/Layout.astro";
 import { loadQuery } from '../sanity/lib/load-query';
 import type { SanityDocument } from '@sanity/client';
-export const prerender = true
-
+import ContactForm from '@/components/contactform';
 import { Icon } from "astro-icon/components";
 import Services from "@/components/Services.astro";
 import Reviews from "@/components/Reviews.astro";
+export const prerender = true
 
 export async function getStaticPaths() {
   const { data: pages } = await loadQuery<SanityDocument[]>({
@@ -46,4 +46,5 @@ const { data: page } = await loadQuery<{ title: string; sections: any[] }>({
 
 	<Services {page}></Services>
 	<Reviews {page}></Reviews>
+	<ContactForm client:visible></ContactForm>
 </Layout>

@@ -51,7 +51,7 @@ export default function MenuBar() {
           </div>
           <div className="inline-flex gap-1 md:gap-5 opacity-0 translate-x-full" 
                     data-animate="to:x-0|opacity-1|ease-back">
-            <a href="#book" className='rounded py-2 px-10 border border-gray-500'>
+            <a href="https://booksy.com/en-gb/46833_bedford-barber-co_barber_143761_bedford" className='rounded py-2 px-10 border border-gray-500'>
                 BOOK NOW
             </a>
           </div>
