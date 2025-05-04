@@ -5,6 +5,7 @@ interface Props {
 // ./src/layouts/Layout.astro
 import { VisualEditing } from "@sanity/astro/visual-editing";
 import MenuBar from '../components/menubar';
+import FooterMenu from "../components/footer"
 import "../styles/global.css";
 const visualEditingEnabled = import.meta.env.PUBLIC_SANITY_VISUAL_EDITING_ENABLED == "true";
 
@@ -54,5 +55,6 @@ const { title } = Astro.props;
 				<!-- Elfsight WhatsApp Chat | Untitled WhatsApp Chat -->
 <script src="https://static.elfsight.com/platform/platform.js" async></script>
 <div class="elfsight-app-7f484d22-00b5-4db1-8198-118638a81aa2" data-elfsight-app-lazy></div>
+<FooterMenu/>
     </body>
 </html>
