@@ -3,11 +3,13 @@ import Layout from "@/layouts/Layout.astro";
 import { loadQuery } from '../sanity/lib/load-query';
 import type { SanityDocument } from '@sanity/client';
 import ContactForm from '@/components/contactform';
+import MapControl from '@/components/map';
 import { Icon } from "astro-icon/components";
 import Services from "@/components/Services.astro";
 import Reviews from "@/components/Reviews.astro";
 import Gallery from "@/components/Gallery.astro";
 import Blog from "@/components/Blog.astro";
+import Hours from "@/components/Hours.astro";
 export const prerender = true
 
 export async function getStaticPaths() {
@@ -52,8 +54,19 @@ const { data: page } = await loadQuery<{ title: string; sections: any[] }>({
 		section._type == "gallery" && <Gallery section={section} />||
 		section._type == "reviews" && <Reviews section={section} /> )
 	}
+	<div class="grid grid-cols-3">
+		<div>
+			<ContactForm client:visible></ContactForm>
+
+		</div>
+		<Hours></Hours>
+		<div class=" grid-flow-col">
+			<MapControl client:visible></MapControl>
+
+		</div>
+
+	</div>
 	<Blog></Blog>
-	<ContactForm client:visible></ContactForm>
 </Layout>
 
 <script>
