@@ -55,3 +55,46 @@ const { data: page } = await loadQuery<{ title: string; sections: any[] }>({
 	<Blog></Blog>
 	<ContactForm client:visible></ContactForm>
 </Layout>
+
+<script>
+	import Swiper from 'swiper';
+	import { Navigation, Pagination } from 'swiper/modules';
+	import 'swiper/css';
+	import 'swiper/css/navigation';
+	import 'swiper/css/pagination';
+	
+	var swiper = new Swiper(".swiper", {
+	  
+	  modules: [Navigation, Pagination],
+		  slidesPerView: 2,
+		  spaceBetween: 20,loop: true,
+	  autoplay: {
+		delay: 2500,
+		disableOnInteraction: false,
+	  },
+		  pagination: {
+			el: ".swiper-pagination",
+		  },navigation: {
+			nextEl: ".swiper-button-next",
+			prevEl: ".swiper-button-prev",
+		  },
+		  breakpoints: {
+			// when window width is >= 320px
+			320: {
+			  slidesPerView: 1,
+			  spaceBetween: 20
+			},
+			// when window width is >= 640px
+			640: {
+			  slidesPerView: 2,
+			  spaceBetween: 40
+			},
+			1200: {
+			  slidesPerView: 3,
+			  spaceBetween: 60
+			}
+		  }
+		});
+	</script>
+	
+	

@@ -122,4 +122,17 @@
   }html {
     scroll-behavior: smooth;
   }
+  .swiper-button-next,.swiper-button-prev {
+	  color: #fff !important;
+	  font-weight:bold;
+	}
+	.swiper-pagination-bullet-active {
+	  background-color: #fff !important;
+	}
+  .swiper-pagination-bullet {
+	  background-color: #ccc !important;
+	}
+	.swiper-pagination-bullets.swiper-pagination-horizontal{
+	  height: fit-content;
+	}
 }
