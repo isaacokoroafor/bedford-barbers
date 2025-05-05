@@ -27,10 +27,10 @@ export default function MenuBar() {
           </div>
           <div className="flex">
             <div className="flex flex-shrink-0 items-center">
-              <a href='/' className='w-full flex ml-12 sm:ml-0'>
+              <a href='/' className='w-full flex  sm:ml-0 '>
               {/* <ReactSVG loading={() => <span>Loading</span>}
               className='h-20 w-20 stroke-white' src='/logo.svg'></ReactSVG> */}
-	    <LogoIcon ></LogoIcon>
+	              <LogoIcon ></LogoIcon>
               </a>
             </div>
             <div className="hidden sm:ml-6 sm:block">
