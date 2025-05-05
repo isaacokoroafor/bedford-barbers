@@ -4,10 +4,9 @@ import { urlForImage } from "@/sanity/lib/url-for-image";
 const { section } = Astro.props;
 ---
 
-<div class="grid grid-cols-3" id="gallery">
+<div class="grid grid-cols-4 gap-20" id="gallery">
     {
         section.images.map((img:any, i:number) => 
-        <img src={img?.asset ? urlForImage(img?.asset)?.url(): ""} class="object-cover w-full">)
+        <img src={img?.asset ? urlForImage(img?.asset)?.url(): ""} class=" object-cover bg-gray-700 brightness-50 w-full grayscale hover:brightness-100 hover:grayscale-0">)
     }
         </div>
-
