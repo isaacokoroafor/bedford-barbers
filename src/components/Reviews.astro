@@ -5,11 +5,11 @@ import Stars from "./Stars.astro";
 const { section } = Astro.props;
 ---
 
-<div class="swiper my-10">
+<div class="swiper my-10"  data-animate="[&_.swiper-slide]:to:x-0|scrollTrigger.trigger-[&]|opacity-1|ease-back|stagger-0.25">
      <div class="swiper-wrapper my-20">
 {
     section.reviewItems.map((review:any, i:Number) => 
-    <div class="swiper-slide text-center text-white">
+    <div class="swiper-slide text-center text-white opacity-0 duration-500 ">
         
         <img src={section.mainImage?.asset ? urlForImage(section.mainImage?.asset)?.url(): ""} class="absolute object-cover flex right-0 w-7 ">
         <Stars stars="3"></Stars>
