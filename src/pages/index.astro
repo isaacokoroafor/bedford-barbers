@@ -7,6 +7,7 @@ import { Icon } from "astro-icon/components";
 import Services from "@/components/Services.astro";
 import Reviews from "@/components/Reviews.astro";
 import Gallery from "@/components/Gallery.astro";
+import ReviewsGroup from "@/components/ReviewsGroup.astro";
 export const prerender = true
 
 export async function getStaticPaths() {
@@ -49,7 +50,8 @@ const { data: page } = await loadQuery<{ title: string; sections: any[] }>({
 	<Reviews {page}></Reviews>
 	{
 		page.sections.map((section) => 
-		section._type == "gallery" && <Gallery section={section} /> )
+		section._type == "gallery" && <Gallery section={section} />||
+		section._type == "reviews" && <ReviewsGroup section={section} /> )
 	}
 	<ContactForm client:visible></ContactForm>
 </Layout>

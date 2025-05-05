@@ -45,6 +45,8 @@ export const pageType = defineType({
             type: "review",
           }),defineArrayMember({
             type: "gallery",
+          }),defineArrayMember({
+            type: "reviews",
           }),
       ],
     }),

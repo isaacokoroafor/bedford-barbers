@@ -1,31 +1,31 @@
 ---
+import { urlForImage } from "@/sanity/lib/url-for-image";
 import Stars from "./Stars.astro";
 
-const { page } = Astro.props;
+const { section } = Astro.props;
 ---
-<div class="flex flex-nowrap">
 
 <div class="swiper my-10">
-     <div class="swiper-wrapper my-10 ">
+     <div class="swiper-wrapper">
 {
-    page.sections.map((section:any, i:Number) => 
-    section._type == "review" && <div class="swiper-slide text-center text-white">
+    section.reviewItems.map((review:any, i:Number) => 
+    <div class="swiper-slide text-center text-white">
+        
+        <img src={section.mainImage?.asset ? urlForImage(section.mainImage?.asset)?.url(): ""} class="absolute object-cover flex right-0 w-7 ">
         <Stars stars="3"></Stars>
-        {section.title}
-        <div class="text-2xl text-white/50">{section.name} <small>{section.reviewDate}</small></div>
+        <span class="mt-5 flex">{review.title}</span>
+        
+        <div class="text-2xl text-white/50">{review.name} <small>{review.reviewDate}</small></div>
     </div>)
 }
     </div>
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-pagination "></div>
-</div>
+    <div class="swiper-button-next relative"></div>
+    <div class="swiper-button-prev relative"></div>
+    <div class="swiper-pagination"></div>
 </div>
 <script>
-// import Swiper JS
 import Swiper from 'swiper';
 import { Navigation, Pagination } from 'swiper/modules';
-// import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
