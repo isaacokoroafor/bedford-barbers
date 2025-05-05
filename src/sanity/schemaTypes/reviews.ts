@@ -10,11 +10,6 @@ export const reviews = defineType({
         type: "string",
       }),
       defineField({
-        name: "category",
-        type: "reference",
-        to: { type: "category" },
-      }),
-      defineField({
             name: "mainImage",
             type: "image",
             options: {

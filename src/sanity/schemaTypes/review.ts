@@ -21,11 +21,6 @@ export const reviewType = defineType({
       name: "reviewDate",
     }),
     defineField({
-      name: "category",
-      type: "reference",
-      to: { type: "category" },
-    }),
-    defineField({
       name: 'url',
       type: 'string',
       title: 'URL',
