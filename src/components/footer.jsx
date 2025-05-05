@@ -2,7 +2,7 @@ import { ReactSVG } from "react-svg";
 import { Footer } from "../js/footerLinks";
 import { socialLinks } from "@/js/socialLinks";
 
-import { BooksyIcon } from './svg/booksyooksy';
+import { BooksyIcon } from './svg/booksy';
 export default function FooterMenu() {
   return (
     <footer className="w-full overflow-hidden">
