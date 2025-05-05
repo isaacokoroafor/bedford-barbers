@@ -7,6 +7,7 @@ import { Icon } from "astro-icon/components";
 import Services from "@/components/Services.astro";
 import Reviews from "@/components/Reviews.astro";
 import Gallery from "@/components/Gallery.astro";
+import Blog from "@/components/Blog.astro";
 export const prerender = true
 
 export async function getStaticPaths() {
@@ -51,5 +52,6 @@ const { data: page } = await loadQuery<{ title: string; sections: any[] }>({
 		section._type == "gallery" && <Gallery section={section} />||
 		section._type == "reviews" && <Reviews section={section} /> )
 	}
+	<Blog></Blog>
 	<ContactForm client:visible></ContactForm>
 </Layout>

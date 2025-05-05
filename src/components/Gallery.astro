@@ -8,7 +8,7 @@ const { section } = Astro.props;
     {
         section.images.map((img:any, i:number) => 
         <div class="translate-x-full opacity-0 h-full w-full">
-            <img src={img?.asset ? urlForImage(img?.asset)?.url(): ""} class="h-full w-full object-cover transition-discrete duration-500 bg-gray-700 brightness-50 w-full grayscale hover:brightness-100 hover:grayscale-0">
+            <img src={img?.asset ? urlForImage(img?.asset)?.url(): ""} class="h-full w-full object-cover transition-discrete duration-500 bg-gray-700 brightness-50 grayscale hover:brightness-100 hover:grayscale-0">
         </div>
         )
     }

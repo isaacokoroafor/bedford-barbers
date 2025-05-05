@@ -1,0 +1,43 @@
+---
+import type { SanityDocument } from "@sanity/client";
+import { loadQuery } from "../sanity/lib/load-query";
+import PortableText from "../components/PortableText.astro";
+import PortableTextImage from "./PortableTextImage.astro";
+import { Icon } from "astro-icon/components";
+import { urlForImage } from "@/sanity/lib/url-for-image";
+const { data: posts } = await loadQuery<SanityDocument[]>({
+    query: `*[_type == "post"]`,
+  });
+
+---
+<div class="w-full overflow-hidden py-10 text-white">
+    <div class=" flex justify-between py-5">
+        <h2>BLOG</h2>
+        <a href="/blog"
+        data-animate="[&]:to:x-0|scrollTrigger.trigger-[&]|opacity-1|ease-back"
+         class="hover:underline blogs-animate translate-x-96">View all posts<Icon name="arrow-right" class="inline  h-5 w-5 mx-3 shrink-0"></Icon></a>
+    </div>
+    <div class="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"
+    data-animate="[&_.post]:to:y-0|scrollTrigger.trigger-[&]|opacity-1|ease-back|stagger-0.25">
+        {
+            posts.map((post:any, i:number) => <a href={`/blog/${post.slug.current}`} data-list={i} class="post-wrapper group/blog">
+                <div data-list={i} class="post translate-y-96 bg-white/5 opacity-0 rounded-lg 
+            overflow-hidden hover:shadow-md cursor-pointer">
+                    <img class="w-full h-40 object-cover duration-500 transition-discrete object-center brightness-50 grayscale group-hover/blog:brightness-100 group-hover/blog:grayscale-0" 
+                        src={urlForImage(post.mainImage).url()}>
+                    <h2 class="p-5">
+                        {post.title}
+                        <Icon name="arrow-right" class=" inline h-5 w-5  mx-3"></Icon>
+                    </h2>
+    
+                </div>
+            </a>)
+        }
+    </div>
+
+</div>
+<script>
+    
+
+
+</script>
