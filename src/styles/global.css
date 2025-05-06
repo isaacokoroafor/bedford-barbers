@@ -114,6 +114,14 @@
   * {
     @apply border-border outline-ring/50;
   }
+  @font-face {
+    font-family: myFirstFont;
+    src: url(Carnivalee-Freakshow.ttf.woff);
+    font-weight: bold;
+  }
+  .logo-font{
+    font-family: myFirstFont;
+  }
   body {
     @apply bg-background text-foreground;
     font-family: "veneer-three", sans-serif;

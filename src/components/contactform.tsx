@@ -34,7 +34,7 @@ export default function ContactForm() {
         />
       </Field>
       
-    <Button className="ml-auto mr-0 mt-5 flex items-center cursor-pointer gap-2 rounded-md border-gray-700 px-3 py-1.5  text-white/50 shadow-inner shadow-white/10 focus:not-data-focus:outline-none data-focus:outline data-focus:outline-white data-hover:bg-gray-600 data-open:bg-gray-700">
+    <Button className="ml-auto mr-0 mt-5 flex items-center cursor-pointer gap-2 rounded-md border-gray-700 px-3 py-1.5  text-white shadow-inner shadow-white/10 focus:not-data-focus:outline-none data-focus:outline  data-hover:bg-white/5 ">
       Send email
     </Button>
     </div>

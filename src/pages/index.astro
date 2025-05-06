@@ -44,9 +44,22 @@ const { data: page } = await loadQuery<{ title: string; sections: any[] }>({
 		</h2>
 		<img src="/barber.svg" class="h-32 -mt-10 rotate-90 mx-auto">
 	</div>
-	<Icon class="h-96 w-96 m-auto opacity-0 translate-y-full" 
+<div class="flex brightness-150 w-fit relative mx-auto mb-20 gap-10">
+
+	<h1 class="logo-font font-light text-8xl text-shadow-lg text-shadow-amber-50 w-fit ">
+		BEDFORD 
+	</h1>
+	<Icon class="h-72 w-72 -mt-20 opacity-0 translate-y-full inline" 
 	data-animate="to:y-0|opacity-1|ease-back"
 	name="logo"></Icon>
+	<h1 class="logo-font font-light text-8xl text-shadow-lg text-shadow-amber-50 w-fit ">
+		BARBER co
+	</h1>
+	<button class="absolute right-0 bottom-0 text-4xl">
+		MAKE AN APPOINTMENT <Icon name="booksy" class="h-12 w-12 inline"></Icon>
+	</button>
+	
+</div>
 
 	<Services {page}></Services>
 	{
