@@ -1,0 +1,14 @@
+---
+import ContactForm from "./contactform";
+import Hours from "./Hours.astro";
+import MapControl from "./map";
+---
+<div class="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3">
+    <div>
+        <ContactForm client:visible></ContactForm>
+    </div>
+    <Hours></Hours>
+    <div class="lg:col-span-2 2xl:col-span-1 flex justify-around">
+        <MapControl client:visible></MapControl>
+    </div>
+</div>

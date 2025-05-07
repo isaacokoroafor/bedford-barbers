@@ -10,6 +10,8 @@ import Reviews from "@/components/Reviews.astro";
 import Gallery from "@/components/Gallery.astro";
 import Blog from "@/components/Blog.astro";
 import Hours from "@/components/Hours.astro";
+import Hero from "@/components/Hero.astro";
+import Contact from "@/components/Contact.astro";
 export const prerender = true
 
 export async function getStaticPaths() {
@@ -33,36 +35,7 @@ const { data: page } = await loadQuery<{ title: string; sections: any[] }>({
 ---
 
 <Layout title="Bedford Barber Co">
-	<div class="text-gray-200 flex text-center whitespace-nowrap w-fit ml-auto mr-3 pt-5 opacity-0 translate-x-full"
-                    data-animate="to:x-0|opacity-1|ease-back">
-					
-		<Icon name="barber-rings" class="w-20 h-32 inline"></Icon>
-		<div class="inline-flex flex-col ">
-			<span class="whitespace-nowrap">
-				Next Booking Slot 
-			</span>
-			<h2 class="flex flex-col text-center">
-				<span class="text-6xl text-center flex">10:30AM</span>
-				<span>SAT 23 Aug 2025</span>
-			</h2>
-		</div>
-	</div>
-<div class="flex brightness-150 w-fit relative mx-auto mb-20 gap-10">
-
-	<h1 class="logo-font font-light text-8xl text-shadow-lg text-shadow-amber-50 w-fit ">
-		BEDFORD 
-	</h1>
-	<Icon class="h-72 w-72 -mt-20 opacity-0 translate-y-full inline" 
-	data-animate="to:y-0|opacity-1|ease-back"
-	name="logo"></Icon>
-	<h1 class="logo-font font-light text-8xl text-shadow-lg text-shadow-amber-50 w-fit ">
-		BARBER co
-	</h1>
-	<button class="absolute right-0 bottom-0 text-4xl rounded-md bg-white/5 hover:shadow-2xl hover:brightness-125 hover:shadow-white/5 cursor-pointer p-3">
-		MAKE AN APPOINTMENT <Icon name="booksy" class="h-12 w-12 inline"></Icon>
-	</button>
-	
-</div>
+<Hero></Hero>
 
 	<Services {page}></Services>
 	{
@@ -70,18 +43,7 @@ const { data: page } = await loadQuery<{ title: string; sections: any[] }>({
 		section._type == "gallery" && <Gallery section={section} />||
 		section._type == "reviews" && <Reviews section={section} /> )
 	}
-	<div class="grid grid-cols-3">
-		<div>
-			<ContactForm client:visible></ContactForm>
-
-		</div>
-		<Hours></Hours>
-		<div class=" grid-flow-col">
-			<MapControl client:visible></MapControl>
-
-		</div>
-
-	</div>
+	<Contact></Contact>
 	<Blog></Blog>
 </Layout>
 

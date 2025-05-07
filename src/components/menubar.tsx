@@ -13,7 +13,7 @@ function classNames(...classes: string[]) {
 
 export default function MenuBar() {
   return (
-    <Disclosure as="nav" className="w-[100vw] overflow-hidden bg-black z-10 text-gray-100 sticky py-5 shadow-2xl shadow-white/5 top-0 px-20 -mx-20">
+    <Disclosure as="nav" className="w-full overflow-hidden bg-black z-10 text-gray-100 sticky py-5 shadow-2xl shadow-white/5 top-0">
       <div className="mx-auto ">
         <div className="relative flex h-16 items-center justify-between">
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -27,15 +27,12 @@ export default function MenuBar() {
           </div>
           <div className="flex">
             <div className="flex flex-shrink-0 items-center">
-              <a href='/' className='w-full flex  sm:ml-0 '>
-              {/* <ReactSVG loading={() => <span>Loading</span>}
-              className='h-20 w-20 stroke-white' src='/logo.svg'></ReactSVG> */}
+              <a href='/' className='w-full flex ml-16  sm:ml-0 '>
 	              <LogoIcon ></LogoIcon>
               </a>
             </div>
             <div className="hidden sm:ml-6 sm:block">
-              <div className="flex space-x-4"
-              
+              <div className="flex space-x-2 2xl:space-x-4 mt-4"
               data-animate="[&>a]:to:y-0|opacity-1|ease-back|stagger-0.09">
                 {Navigation.map((item) => (
                   <a
@@ -44,7 +41,7 @@ export default function MenuBar() {
                     aria-current={item.current ? 'page' : undefined}
                     className={classNames(
                       item.current ? ' text-gray-100' : '',
-                      'rounded-md translate-y-10 px-1 md:px-3 py-2 font-medium opacity-0 text-gray-200 ',
+                      'rounded-md translate-y-10 font-medium opacity-0 text-gray-200 ',
                     )}
                   >
                     <span className='flex scale-95 hover:scale-100 transition-discrete duration-300 hover:shadow-white/5'>
@@ -80,7 +77,7 @@ export default function MenuBar() {
               href={item.href}
               aria-current={item.current ? 'page' : undefined}
               className={classNames(
-                item.current ? 'text-gray-900 ' : 'text-gray-800',
+                item.current ? 'text-white' : 'text-white',
                 'block rounded-md px-3 py-2 text-lx3 font-medium',
               )}
             >

@@ -1,6 +1,6 @@
 export const LogoIcon = () => {
 	return (
-    <svg id="Layer_1" vector-effect="non-scaling-stroke" className=" h-16 " data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 790.2 781.58">
+    <svg id="Layer_1" vectorEffect="non-scaling-stroke" className=" h-16 " data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 790.2 781.58">
 
 		<path strokeWidth="30" stroke="#fff" d="M586.21,25.43c89.97,49.64,151.53,87.05,95.39,157.86-3.91,7.46,50.19,40.06,47.34,47.91-.66,1.8-34.95,124.54-34.58,126.43"/>
 		<path strokeWidth="30" stroke="#fff" d="M61.79,581.02c-90.16-55.35-17.55-300.16,50.68-393.81.59-.81.97-1.75,1.61-2.53,9.06-11.04,31.93-47.18,40.44-55.82,22.97-23.35,57.72-56.43,88.44-68.35,20.27-7.86,37.14-26.57,58.39-31.18,15.76-3.42,40.83-17.52,56.69-20.41,6.91-1.26,33.24-3.82,40.25-4.54,9.15-.93,29.87.21,39.12,0,147.78-3.31,120.46,15.4,154.03,22.44"/>
