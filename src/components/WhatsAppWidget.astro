@@ -1,7 +1,9 @@
+---
 const phoneNumber = '+447932422141'
-const defaultMesasge = "Hello%20I%20would%20like%20to%20book%20an%20appointment"
+const defaultMessage = encodeURIComponent("Hello I would like to book an appointment")
+---
 
-<a href={'https://wa.me/${+447932422141}?text=${defaultMessage}'} target="_blank" class="fixed bottom-5 right-5 bg-green-500 text-white p-4 rounded-full shadow-lg flex items-cetner space-x-3 z-50 hover:bg-green-600 transition">
+<a href={`https://wa.me/${phoneNumber}?text=${defaultMessage}`} target="_blank" class="fixed bottom-5 right-5 bg-green-500 text-white p-4 rounded-full shadow-lg flex items-center space-x-3 z-50 hover:bg-green-600 transition">
   <img src="/whatsapp.svg" alt="WhatsApp" class="w-10 h-10">
   <span class="text-lg">Chat with us</span>
 </a>
