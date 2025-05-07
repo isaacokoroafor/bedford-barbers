@@ -4,7 +4,7 @@ import { urlForImage } from "@/sanity/lib/url-for-image";
 const { section } = Astro.props;
 ---
 
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-5 lg:gap-20 overflow-x-hidden" id="gallery" data-animate="[&>div]:to:x-0|scrollTrigger.trigger-[&]|opacity-1|ease-back|stagger-0.25">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-5 lg:gap-20 overflow-x-hidden" id="gallery" data-animate="[&>div]:to:x-0|scrollTrigger.trigger-[&]|opacity-1|ease-back|stagger-0.25">
     {
         section.images.map((img:any, i:number) => 
         <div class="translate-x-full opacity-0 h-full w-full">
