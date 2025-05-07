@@ -11,7 +11,7 @@ const { section } = Astro.props;
     section.reviewItems.map((review:any, i:Number) => 
     <div class="swiper-slide text-center text-white opacity-0 duration-500 ">
         
-        <img src={section.mainImage?.asset ? urlForImage(section.mainImage?.asset)?.url(): ""} class="absolute object-cover flex right-0 w-7 ">
+        <img alt={"social review"} src={section.mainImage?.asset ? urlForImage(section.mainImage?.asset)?.url(): ""} class="absolute object-cover flex right-0 w-7 ">
         <Stars stars="3"></Stars>
         <span class="mt-5 flex">{review.title}</span>
         
