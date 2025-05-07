@@ -27,7 +27,7 @@ export default function MenuBar() {
           </div>
           <div className="flex">
             <div className="flex flex-shrink-0 items-center">
-              <a href='/' className='w-full flex ml-16  sm:ml-0 '>
+              <a href='/' aria-label='home' className='w-full flex ml-16  sm:ml-0 '>
 	              <LogoIcon ></LogoIcon>
               </a>
             </div>

@@ -8,7 +8,7 @@ export default function FooterMenu() {
     <footer className="w-full overflow-hidden">
       <div className="mx-auto max-w-6xl px-6 py-8">
         <div className="flex flex-col flex-shrink-0 items-center justify-center">
-          <a className=" flex mb-4 stroke-amber-400" href="/">
+          <a className=" flex mb-4 stroke-amber-400" href="/" aria-label="home">
             <LogoIcon ></LogoIcon>
           </a>
           <p className="text-white text-center">20C Miller Rd, Bedford MK42 9NZ</p>
@@ -20,6 +20,7 @@ export default function FooterMenu() {
               key={item.name}
               href={item.href} 
               name={item.name}
+              aria-label={item.name}
               className="text-white scale-95 hover:scale-100"
               aria-current={item.current ? "page" : undefined}
             >
@@ -33,7 +34,7 @@ export default function FooterMenu() {
             <a
               key={name}
               href={href}
-              name={name}
+              aria-label={name}
               className="text-white"
               aria-current={name}
             >
