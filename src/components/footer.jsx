@@ -21,7 +21,7 @@ export default function FooterMenu() {
               href={item.href} 
               name={item.name}
               aria-label={item.name}
-              className="text-white scale-95 hover:scale-100"
+              className="text-white scale-95 hover:scale-100 transition-discrete duration-300"
               aria-current={item.current ? "page" : undefined}
             >
               {item.name}

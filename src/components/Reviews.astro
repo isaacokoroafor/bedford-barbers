@@ -4,8 +4,14 @@ import Stars from "./Stars.astro";
 
 const { section } = Astro.props;
 ---
-
-<div class="swiper my-10"  data-animate="[&_.swiper-slide]:to:x-0|scrollTrigger.trigger-[&]|opacity-1|ease-back|stagger-0.25">
+<div class="flex w-fit mx-auto pt-20">
+    {section.average.toFixed(1)} <Stars stars="3"></Stars>
+    <img alt={"social review"} src={section.mainImage?.asset ? urlForImage(section.mainImage?.asset)?.url(): ""} class=" object-cover  w-9 ">
+</div>
+<div class="flex w-full justify-around">
+    {section.reviews} {section.title}
+</div>
+<div class="swiper mb-10"  data-animate="[&_.swiper-slide]:to:x-0|scrollTrigger.trigger-[&]|opacity-1|ease-back|stagger-0.25">
      <div class="swiper-wrapper my-20">
 {
     section.reviewItems.map((review:any, i:Number) => 

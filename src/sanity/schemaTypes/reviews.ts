@@ -10,6 +10,14 @@ export const reviews = defineType({
         type: "string",
       }),
       defineField({
+        name: "reviews",
+        type: "number",
+      }),
+      defineField({
+        name: "average",
+        type: "number",
+      }),
+      defineField({
             name: "mainImage",
             type: "image",
             options: {
