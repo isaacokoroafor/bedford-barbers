@@ -119,14 +119,21 @@
     src: url(Carnivalee-Freakshow.ttf.woff);
     font-weight: bold;
   }
+  @font-face {
+    font-family: ConcertOne;
+    src: url(Concert_One/ConcertOne-Regular.ttf);
+    font-weight: 400;
+    font-style: normal; 
+  }
   .logo-font{
     font-family: myFirstFont;
   }
   body {
     @apply bg-background text-foreground;
-    font-family: "veneer-three", sans-serif;
+    /* font-family: "veneer-three", sans-serif;
     font-weight: 400;
-    font-style: normal;
+    font-style: normal; */
+    font-family: ConcertOne;
   }html {
     scroll-behavior: smooth;
   }
