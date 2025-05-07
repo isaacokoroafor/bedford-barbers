@@ -4,6 +4,7 @@ interface Props {
 }
 // ./src/layouts/Layout.astro
 import { VisualEditing } from "@sanity/astro/visual-editing";
+import WhatsAppWidget from "../components/WhatsAppWidget.astro";
 import MenuBar from '../components/menubar';
 import FooterMenu from "../components/footer"
 import "../styles/global.css";
@@ -81,8 +82,9 @@ const { title } = Astro.props;
             SetupAnimations();
         </script>
 				<!-- Elfsight WhatsApp Chat | Untitled WhatsApp Chat -->
-<script src="https://static.elfsight.com/platform/platform.js" async></script>
-<div class="elfsight-app-7f484d22-00b5-4db1-8198-118638a81aa2" data-elfsight-app-lazy></div>
+<!-- <script src="https://static.elfsight.com/platform/platform.js" async></script>
+<div class="elfsight-app-7f484d22-00b5-4db1-8198-118638a81aa2" data-elfsight-app-lazy></div> -->
+<WhatsAppWidget/>
 <FooterMenu/>
     </body>
 </html>
