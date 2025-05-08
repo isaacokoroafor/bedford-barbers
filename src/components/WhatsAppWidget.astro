@@ -1,9 +1,44 @@
 ---
 const phoneNumber = '+447932422141'
 const defaultMessage = encodeURIComponent("Hello I would like to book an appointment")
+const chatUrl = `https://wa.me/${phoneNumber}?text=${defaultMessage}`
 ---
-
-<a href={`https://wa.me/${phoneNumber}?text=${defaultMessage}`} target="_blank" class="fixed bottom-5 right-5 bg-green-500 text-white p-4 rounded-full shadow-lg flex items-center space-x-3 z-50 hover:bg-green-600 transition">
+<!-- WhatsApp button -->
+<a href="javascript:void(0)" onclick="openChat()" class="fixed bottom-5 right-5 bg-green-500 text-white py-2 px-6 rounded-full shadow-lg flex items-center space-x-3 z-50 hover:bg-green-600 transition font-sans">
   <img src="/whatsapp.svg" alt="WhatsApp" class="w-10 h-10">
-  <span class="text-lg">Chat with us</span>
+  <span class="text-lg">WhatsApp</span>
 </a>
+<!-- Popup box -->
+<div id="chat-popup" class="fixed bottom-25 right-5 hidden bg-white shadow-lg rounded-lg w-80 max-w-full p-4 z-40 font-sans">
+  <div class="bg-green-700">
+    <div class="flex justify-between items-center">
+    <span class="font-semibold">Bedford Barber Co</span>
+    <button onclick="closeChat()" class="text-gray-400">X</button>
+  </div>
+  <div class="mt-2 mb-4 text-sm text-white">
+    <p>Typically replies within a day</p>
+  </div>
+  </div>
+  
+  <div class="bg-gray-100 p-4 rounded-lg mb-4">
+    <p><strong>Bedford Barber Co:</strong> Hey 👋 How can I help?</p>
+  </div>
+  <a href={chatUrl} target="_blank" class="bg-green-500 text-white p-2 rounded-full text-center">Start Chat</a>
+</div>
+
+<script>
+  (window as any).openChat = function openChat() {
+    console.log('Widget clicked');
+    const chatPopup = document.getElementById('chat-popup');
+    if (chatPopup) {
+      chatPopup.classList.remove('hidden');
+    }
+  };
+
+  (window as any).closeChat = function closeChat() {
+    const chatPopup = document.getElementById('chat-popup');
+    if (chatPopup) {
+      chatPopup.classList.add('hidden');
+    }
+  };
+</script>
