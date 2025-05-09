@@ -6,7 +6,7 @@ import { Bars3Icon, BellIcon, XMarkIcon, EnvelopeIcon } from '@heroicons/react/2
 export default function ContactForm() {
   return (
     <>
-    <h2 id="contact">
+    <h2 id="contact" className='scroll-mt-28'>
         <EnvelopeIcon className='h-10 inline'></EnvelopeIcon> Bedford Barber co
     </h2>
     <div className="w-full max-w-md px-4">
