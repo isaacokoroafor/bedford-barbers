@@ -3,27 +3,29 @@
 import { Icon } from "astro-icon/components";
 ---
 <div class="text-gray-200 flex text-center whitespace-nowrap w-fit ml-auto mr-3 py-5 opacity-0 translate-x-full"
-data-animate="to:x-0|opacity-1|ease-back">
+data-animate="to:x-0|duration-1|scrollTrigger.trigger-[&]|opacity-1|ease-back|scrollTrigger.toggleActions-[restart_pause_restart_pause]">
 
 <Icon name="barber-rings" class="w-20 h-28 md:h-32 inline"></Icon>
 <div class="inline-flex flex-col ">
 <span class="whitespace-nowrap">
-Next Booking Slot 
+OPEN 7 DAYS A WEEK 
 </span>
 <h2 class="flex flex-col text-center">
-<span class="text-5xl md:text-6xl text-center flex">10:30AM</span>
-<span>SAT 23 Aug 2025</span>
+<span class="text-5xl md:text-6xl text-center flex">10AM-8PM</span>
+<span>MONDAY-FRIDAY</span>
 </h2>
 </div>
 </div>
 <div class="h-[60vh] flex flex-col justify-center">
-    <div class="flex flex-col md:flex-row text-center brightness-150 w-fit text-6xl 2xl:text-8xl mx-auto mb-20 gap-2">
+    <div 
+    data-animate="to:y-0|duration-1|scrollTrigger.trigger-[&]|opacity-1|ease-back|scrollTrigger.toggleActions-[restart_pause_restart_pause]"
+    class="flex translate-y-full opacity-0 flex-col md:flex-row text-center brightness-150 w-fit text-6xl 2xl:text-8xl mx-auto mb-20 gap-2">
     
     <div class="logo-font font-effect-shadow-multiple font-light mx-auto text-shadow-lg text-shadow-amber-50 w-fit ">
     BEDFORD 
     </div>
-    <Icon class="h-40 w-40 lg:h-72 2xl:w-72 md:-mt-16 lg:-mt-32 2xl:-mt-20 mx-auto md:mx-3 shrink opacity-0 translate-y-full inline" 
-    data-animate="to:y-0|opacity-1|ease-back"
+    <Icon class="h-40 w-40 lg:h-72 2xl:w-72 md:-mt-16 lg:-mt-32 2xl:-mt-20 mx-auto md:mx-3 shrink inline" 
+    
     name="logo"></Icon>
     <div class="logo-font whitespace-nowrap font-light mx-auto text-shadow-lg text-shadow-amber-50 w-fit ">
     BARBER co

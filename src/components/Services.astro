@@ -6,9 +6,10 @@ const { page } = Astro.props;
 
 ---
 
-<div class="w-full scroll-mt-24 my-20" id="services">
+<div class="w-full scroll-mt-24 mb-20" id="services">
     <div 
-    data-animate="[&>a]:to:y-0|opacity-1|ease-back|stagger-0.25|scrollTrigger.toggleActions-[restart_reverse_restart_reverse]" class="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-2 md:gap-10">
+    data-animate="[&>a]:to:y-0|opacity-1|stagger-0.25|scrollTrigger.toggleActions-[restart_reverse_restart_reverse]|scrollTrigger.markers-true|ease-power2.inOut" 
+    class="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-2 md:gap-10">
     {
 		page.sections.map((section:any, i:Number) => 
 		section._type == "serviceOffer" && 
