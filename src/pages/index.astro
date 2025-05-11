@@ -35,7 +35,7 @@ const { data: page } = await loadQuery<{ title: string; sections: any[] }>({
 ---
 
 <Layout title="Bedford Barber Co">
-<Hero></Hero>
+<!-- <Hero></Hero> -->
 
 	<Services {page}></Services>
 	<!-- {
@@ -44,8 +44,8 @@ const { data: page } = await loadQuery<{ title: string; sections: any[] }>({
 		section._type == "reviews" && <Reviews section={section} /> 
 	)
 	} -->
-	<!-- <Contact></Contact>
-	<Blog></Blog> -->
+	<!-- <Contact></Contact> -->
+	<Blog></Blog>
 </Layout>
 
 <script>
