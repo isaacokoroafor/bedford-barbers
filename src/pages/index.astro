@@ -37,13 +37,13 @@ const { data: page } = await loadQuery<{ title: string; sections: any[] }>({
 <Layout title="Bedford Barber Co">
 <!-- <Hero></Hero> -->
 
-	<!-- <Services {page}></Services> -->
-	<!-- {
+	<Services {page}></Services>
+	{
 		page.sections.map((section) => 
 		section._type == "gallery" && <Gallery section={section} />||
 		section._type == "reviews" && <Reviews section={section} /> 
 	)
-	} -->
+	}
 	<!-- <Contact></Contact>
 	<Blog></Blog> -->
 </Layout>
