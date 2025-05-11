@@ -56,7 +56,7 @@ export default function MenuBar() {
           <div className="inline-flex gap-1 md:gap-5 opacity-0 translate-x-full" 
                     data-animate="to:x-0|opacity-1|scrollTrigger.trigger-[&]|ease-back">
             <a href="https://booksy.com/en-gb/46833_bedford-barber-co_barber_143761_bedford" 
-            className='group/headbooknow rounded [&>svg]:w-10 [&>svg]:h-10 flex py-2 px-10 border border-white/5  hover:shadow-white/50 hover:bg-white/5'>
+            className='group/headbooknow rounded [&>svg]:w-10 [&>svg]:h-10 flex py-2 px-10 border border-white/5  hover:shadow-white/50 bg-white/5'>
             
                               <BooksyIcon></BooksyIcon>
             <span className='flex ml-2 scale-95 group-hover/shadow-white/50 transition-discrete duration-500 group-hover/headbooknow:brightness-125'>

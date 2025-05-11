@@ -4,10 +4,11 @@ interface Props {
 }
 // ./src/layouts/Layout.astro
 import { VisualEditing } from "@sanity/astro/visual-editing";
-import WhatsAppWidget from "../components/WhatsAppWidget.astro";
 import MenuBar from '../components/menubar';
 import FooterMenu from "../components/footer"
 import "../styles/global.css";
+import Analytics from '@vercel/analytics/astro';
+import SpeedInsights from '@vercel/speed-insights/astro';
 const visualEditingEnabled = import.meta.env.PUBLIC_SANITY_VISUAL_EDITING_ENABLED == "true";
 
 const { title } = Astro.props;
@@ -87,16 +88,13 @@ const { title } = Astro.props;
     <body class="bg-black px-5 lg:px-20 pb-10 text-2xl lg:text-3xl overflow-x-hidden overflow-y-auto  text-gray-200 w-full">
 <MenuBar client:visible></MenuBar>
         <slot />
+		<Analytics />
+		<SpeedInsights />
         <VisualEditing enabled={visualEditingEnabled} />
         <script>
             import { SetupAnimations } from "@/js/animation";
-
             SetupAnimations();
         </script>
-				<!-- Elfsight WhatsApp Chat | Untitled WhatsApp Chat -->
-<!-- <script src="https://static.elfsight.com/platform/platform.js" async></script>
-<div class="elfsight-app-7f484d22-00b5-4db1-8198-118638a81aa2" data-elfsight-app-lazy></div> -->
-<WhatsAppWidget/>
 <FooterMenu/>
     </body>
 </html>
