@@ -3,6 +3,7 @@ interface Props {
 	title: string;
 }
 // ./src/layouts/Layout.astro
+import { Icon } from "astro-icon/components";
 import { VisualEditing } from "@sanity/astro/visual-editing";
 import MenuBar from '../components/menubar';
 import FooterMenu from "../components/footer"
@@ -96,5 +97,9 @@ const { title } = Astro.props;
             SetupAnimations();
         </script>
 <FooterMenu/>
+<a href="https://www.dev-operations.info" class="mx-auto flex text-sm justify-center leading-3.5">
+	DevOps 
+	<Icon name="devops" class="ml-3"></Icon>
+</a>
     </body>
 </html>
