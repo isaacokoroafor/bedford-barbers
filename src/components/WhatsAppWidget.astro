@@ -9,21 +9,28 @@ const chatUrl = `https://wa.me/${phoneNumber}?text=${defaultMessage}`
   <span class="text-lg">WhatsApp</span>
 </a>
 <!-- Popup box -->
-<div id="chat-popup" class="fixed bottom-25 right-5 hidden bg-white shadow-lg rounded-lg w-80 max-w-full p-4 z-40 font-sans">
-  <div class="bg-green-700">
+<div id="chat-popup" class="fixed bottom-25 right-5 hidden shadow-lg rounded-lg w-80 max-w-full bg-emerald-800 z-40 font-sans pt-4">
+  <div class="px-4">
     <div class="flex justify-between items-center">
     <span class="font-semibold">Bedford Barber Co</span>
-    <button onclick="closeChat()" class="text-gray-400">X</button>
+    <button onclick="closeChat()" class="text-gray-300 text-sm">X</button>
   </div>
   <div class="mt-2 mb-4 text-sm text-white">
     <p>Typically replies within a day</p>
   </div>
   </div>
   
-  <div class="bg-gray-100 p-4 rounded-lg mb-4">
-    <p><strong>Bedford Barber Co:</strong> Hey 👋 How can I help?</p>
+  <div class="bg-gray-200 py-6 px-3 text-sm grid grid-cols-2">
+    <div class="py-2 bg-white pl-2 rounded text-black"> <p class="text-gray-500"><strong>Bedford Barber Co</strong></p> <p class="mb-4"> Hey 👋 </p>
+      <p>How can I help?</p>
+      <p></p>
+    </div>
+  
   </div>
-  <a href={chatUrl} target="_blank" class="bg-green-500 text-white p-2 rounded-full text-center">Start Chat</a>
+  <div class="bg-white p-4 flex ">
+    <a href={chatUrl} target="_blank" class="bg-green-500 text-white text-sm rounded-full text-center flex-1 mx-2 py-2">Start Chat</a>
+  </div>
+  
 </div>
 
 <script>
