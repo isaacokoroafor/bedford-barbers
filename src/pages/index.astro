@@ -48,6 +48,19 @@ const { data: page } = await loadQuery<{ title: string; sections: any[] }>({
 </Layout>
 
 <script>
+
+
+const consoleOptions = 'color: #5cd8fa; font-size: 14px;';
+	console.log(String.raw`%c
+.-----------------------------------------.
+|                                         |
+|    ____  ____  _  _   __  ____  ____    |
+|   (    \(  __)/ )( \ /  \(  _ \/ ___)   |
+|    ) D ( ) _) \ \/ /(  O )) __/\___ \   |
+|   (____/(____) \__/  \__/(__)  (____/   |
+|                                         |
+'-----------------------------------------'
+`,consoleOptions)
 	import Swiper from 'swiper';
 	import { Navigation, Pagination } from 'swiper/modules';
 	import 'swiper/css';
