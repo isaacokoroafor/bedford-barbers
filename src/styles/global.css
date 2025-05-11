@@ -116,12 +116,12 @@
   }
   @font-face {
     font-family: myFirstFont;
-    src: url(Carnivalee-Freakshow.ttf.woff);
+    src: url(/fonts/Carnivalee-Freakshow.ttf.woff);
     font-weight: bold;
   }
   @font-face {
     font-family: BowlbyOne;
-    src: url(Squada_One/SquadaOne-Regular.ttf);
+    src: url(/fonts/Squada_One/SquadaOne-Regular.ttf);
     font-weight: 400;
     font-style: normal;
   }

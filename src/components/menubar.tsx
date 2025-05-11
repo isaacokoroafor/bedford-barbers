@@ -32,8 +32,7 @@ export default function MenuBar() {
               </a>
             </div>
             <div className="hidden sm:ml-6 sm:block">
-              <div className="flex space-x-2 2xl:space-x-4 mt-4"
-              data-animate="[&>a]:to:y-0|opacity-1|ease-back|stagger-0.09">
+              <div className="flex space-x-2 2xl:space-x-4 mt-4">
                 {Navigation.map((item) => (
                   <a
                     key={item.name}
@@ -41,7 +40,7 @@ export default function MenuBar() {
                     aria-current={item.current ? 'page' : undefined}
                     className={classNames(
                       item.current ? ' text-gray-100' : '',
-                      'rounded-md translate-y-10 font-medium opacity-0 text-gray-200 ',
+                      'rounded-md t font-medium text-gray-200 ',
                     )}
                   >
                     <span className='flex scale-95 hover:scale-100 transition-discrete duration-300 hover:shadow-white/5'>
@@ -53,8 +52,7 @@ export default function MenuBar() {
               </div>
             </div>
           </div>
-          <div className="inline-flex gap-1 md:gap-5 opacity-0 translate-x-full" 
-                    data-animate="to:x-0|opacity-1|scrollTrigger.trigger-[&]|ease-back">
+          <div className="inline-flex gap-1 md:gap-5">
             <a href="https://booksy.com/en-gb/46833_bedford-barber-co_barber_143761_bedford" 
             className='group/headbooknow rounded [&>svg]:w-10 [&>svg]:h-10 flex py-2 px-10 border border-white/5  hover:shadow-white/50 bg-white/5'>
             
