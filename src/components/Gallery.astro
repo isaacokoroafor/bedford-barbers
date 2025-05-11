@@ -4,13 +4,13 @@ import { urlForImage } from "@/sanity/lib/url-for-image";
 const { section } = Astro.props;
 ---
 
-<div class="grid my-20 grid-cols-1 overflow-x-hidden scroll-mt-24 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-5 lg:gap-20" 
+<div class="grid my-20 grid-cols-1 scroll-mt-24 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-5 lg:gap-20" 
 id="gallery" 
-data-animate="[&>.gallery_item]:to:x-0|scrollTrigger.trigger-[&]|opacity-1|ease-back|stagger-0.25|scrollTrigger.toggleActions-[restart_pause_restart_pause]">
+data-animate="[&>div]:to:x-0|scrollTrigger.trigger-[&]|opacity-1|ease-back|stagger-0.25|scrollTrigger.toggleActions-[restart_pause_restart_pause]">
     {
         section.images.map((img:any, i:number) => 
-        <div class="gallery_item translate-x-full opacity-0 h-full w-full">
-            <img alt={`Gallery ${i}`} src={img?.asset ? urlForImage(img?.asset)?.url(): ""} class="h-full w-full object-cover transition-discrete duration-500 bg-gray-700 brightness-50 grayscale hover:brightness-100 hover:grayscale-0">
+        <div class="translate-x-full opacity-0 h-full w-full">
+            <img alt={`Gallery ${i}`} src={img?.asset ? urlForImage(img?.asset)?.url(): ""} class="h-full w-full object-cover transition-discrete duration-500 bg-gray-700 brightness-50 grayscale hover:brightness-100 hover:grayscale-0" />
         </div>
         )
     }
