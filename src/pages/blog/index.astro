@@ -2,18 +2,31 @@
 // /blog/index.astro
 import { sanityClient } from "sanity:client";
 import Layout from "@/layouts/Layout.astro";
-const posts = await sanityClient.fetch(`*[_type == "post" && defined(slug)] | order(publishedAt desc)`);
+import { Icon } from "astro-icon/components";
+import { urlForImage } from "@/sanity/lib/url-for-image";
+const posts = await sanityClient.fetch(`*[_type == "post" && publishedAt != null && defined(slug)] | order(publishedAt desc)`);
 ---
 <Layout title="Blog - Bedford Barber Co">
 
     <h1>BLOG</h1>
-    <ul>
-      {posts.map((post:any) => (
-        <li>
-          <a href={'/blog/' + post.slug.current} class="post-link">
-            {post.title}
-          </a>
-        </li>
-      ))}
-    </ul>
+    
+    <div class="w-full relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"
+    data-animate="[&_.post]:to:y-0|scrollTrigger.trigger-[&]|opacity-1|ease-back|stagger-0.25|scrollTrigger.toggleActions-[restart_pause_restart_pause]">
+        {
+            posts.map((post:any, i:number) => <a href={`/blog/${post.slug.current}`} data-list={i} class="post-wrapper group/blog">
+                <div data-list={i} class="post translate-y-96 bg-white/5 opacity-0 rounded-lg 
+            overflow-hidden hover:shadow-md cursor-pointer">
+                    <img class="w-full h-60 object-cover duration-500 transition-discrete object-center brightness-50 grayscale group-hover/blog:brightness-100 group-hover/blog:grayscale-0" 
+                        alt={post.mainImage.alt}
+                        src={urlForImage(post.mainImage).url()}>
+                          <span class="absolute top-1 right-2">{new Date(post.publishedAt).toDateString()}</span>
+                    <h2 class="p-5">
+                        {post.title}
+                        <Icon name="arrow-right" class=" inline h-5 w-5  mx-3"></Icon>
+                    </h2>
+    
+                </div>
+            </a>)
+        }
+    </div>
 </Layout>
