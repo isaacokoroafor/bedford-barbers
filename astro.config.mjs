@@ -11,7 +11,7 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-  site: 'https://bedford-barbers.vercel.app',
+  site: 'https://www.bedfordbarber.co.uk',
   integrations: [react(), icon(), sanity({
     projectId: 'hmnd7ebx',
     dataset: 'production',
