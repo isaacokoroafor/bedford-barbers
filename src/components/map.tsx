@@ -11,7 +11,7 @@ const geojson: FeatureCollection = {
       type: 'Feature',
       geometry: {
         type: 'Point',
-        coordinates: [-0.465,  52.1252]
+        coordinates: [-0.467,  52.1232]
       },
       properties: {title: 'Bedford Barber co'}
     }

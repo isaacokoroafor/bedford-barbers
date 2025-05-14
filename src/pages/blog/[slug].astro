@@ -4,6 +4,9 @@ import Layout from '@/layouts/Layout.astro';
 import type { SanityDocument } from "@sanity/client";
 import { loadQuery } from "../../sanity/lib/load-query";
 import PortableText from "../../components/PortableText.astro";
+import { urlForImage } from "@/sanity/lib/url-for-image";
+import Blog from "@/components/Blog.astro";
+import { Icon } from "astro-icon/components";
 export async function getStaticPaths() {
   const { data: posts } = await loadQuery<SanityDocument[]>({
     query: `*[_type == "post"]`,
@@ -26,7 +29,19 @@ const { data: post } = await loadQuery({
 });
 ---
 <Layout title={post.title}>
+  <div class="flex py-5 justify-between">
     <h1>A post about {post.title}</h1>
-    <PortableText portableText={post.body} />
+    <div>Posted: {new Date(post.publishedAt).toDateString()}</div>
+  </div>
+    <div class="flex">
+      <img class="w-1/2 h-[45vh] object-cover float-left object-center" 
+        src={urlForImage(post.mainImage).url()} alt={post.mainImage?.alt}>
+        <div class="pl-10">
+          <PortableText  portableText={post.body} />
+  
+        </div>
+
+    </div>
+    <Blog></Blog>
 </Layout>
 
